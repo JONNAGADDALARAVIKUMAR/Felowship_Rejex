@@ -13,7 +13,11 @@ public class UserRegestration {
 		
 		System.out.print("Enter First Name : ");
 		String firstName = scan.next();
-		validate(firstName, nameRejex);	
+		validate(firstName, nameRejex);
+		
+		System.out.print("Enter Last Name : ");
+		String lastName = scan.next();
+		validate(lastName, nameRejex);	
 	}
 	
 	public static void validate(String validationString, String pattern) {
