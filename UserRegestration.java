@@ -11,8 +11,9 @@ public class UserRegestration {
 	
 		String nameRejex = "^[A-Z]{1}+[A-Za-z]{2,}";
 		String mobileNumberRejex = "[+]{0,1}+91+[ ]+[1-9]{1}+[0-9]{9}";
-		String emailRejex = "[a-zA-Z]{1,}?[A-Za-z0-9]{0,1}+([-._+]{0,1}+[a-zA-Z0-9]{1,}){0,1}+@+"
-							+ "[a-zA-Z0-9]{1,}?([-._]{0,1}+[a-zA-Z0-9]{2,}){0,1}?([-._]{0,1}"
+		String passwordRejex = "(?=.{8,})(.*?[A-Z]{1,}.*)";
+		String emailRejex = "[a-zA-Z]{1,}?[A-Za-z0-9]{0,1}+([-._+]{0,1}+[a-zA-Z0-9]{1,}){0,1}"
+							+ "+@+[a-zA-Z0-9]{1,}?([-._]{0,1}+[a-zA-Z0-9]{2,}){0,1}?([-._]{0,1}"
 							+ "+[a-zA-Z]{2,}){0,1}";
 		
 		System.out.print("Enter First Name : ");
@@ -28,8 +29,15 @@ public class UserRegestration {
 		validate(email, emailRejex);
 		
 		System.out.print("Enter Mobile Number : ");
-		String mobileNumber = scan.nextLine();
+		//String mobileNumber = scan.nextLine();
+		String mobileNumber1 = scan.next();
+		String mobileNumber2 = scan.next();
+		String mobileNumber = mobileNumber1+" "+mobileNumber2;
 		validate(mobileNumber, mobileNumberRejex);
+		
+		System.out.print("Enter Password : ");
+		String password = scan.next();
+		validate(password, passwordRejex);
 	}
 	
 	public static void validate(String validationString, String pattern) {
