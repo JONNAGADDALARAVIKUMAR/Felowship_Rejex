@@ -38,6 +38,9 @@ public class UserRegestration {
 		System.out.print("Enter Password : ");
 		String password = scan.next();
 		validate(password, passwordRejex);
+		
+		EmailVerification emailVerify = new EmailVerification();//Creating an Object for a class which verifies sample eMails
+		emailVerify.verifyEmail(emailRejex);//calling method to verify sample eMails
 	}
 	
 	public static void validate(String validationString, String pattern) {
