@@ -31,9 +31,9 @@ public class EmailVerification {
 		for(int i=0;i<emailExamples.length;i++)
 		{
 			if(Pattern.matches(emailRejex, emailExamples[i]))//Checks Matches or not
-				System.out.println(i+": Validated");
+				System.out.println((i+1)+": Validated");
 			else
-				System.out.println(i+": Invalid");
+				System.out.println((i+1)+": Invalid");
 		}
 	}
 
